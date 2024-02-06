@@ -14,9 +14,9 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField, Range(-17, 17), Tooltip("Limite movimiento en X del player")]
     private float xRrange;
-    
-    
-    
+
+
+    public GameObject projectilePrefab;
     
     // Start is called before the first frame update
     void Start()
@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour
         
         
       transform.Translate(UnityEngine.Vector3.right * speed * Time.deltaTime * horizontal );
-      transform.Translate(UnityEngine.Vector3.forward * speed * Time.deltaTime * vertical);
+     // transform.Translate(UnityEngine.Vector3.forward * speed * Time.deltaTime * vertical);
 
 
       if (transform.position.x < -xRrange)
