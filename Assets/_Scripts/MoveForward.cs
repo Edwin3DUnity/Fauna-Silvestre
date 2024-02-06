@@ -5,8 +5,8 @@ using UnityEngine;
 public class MoveForward : MonoBehaviour
 {
 
-    [SerializeField, Range(-10, 200), Tooltip(" velocidad de movimiento de la comida")]
-    private float speed;
+    [SerializeField, Range(-22, 50), Tooltip("Velocidad de movimiento objetos")]
+    private float speed = 5;
     
     // Start is called before the first frame update
     void Start()
@@ -17,6 +17,6 @@ public class MoveForward : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector3.forward * speed * Time.deltaTime);
+        transform.Translate(Vector3.forward * speed * Time.deltaTime );
     }
 }

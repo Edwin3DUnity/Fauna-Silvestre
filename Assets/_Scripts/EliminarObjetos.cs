@@ -2,12 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DestroyOutOfBounds : MonoBehaviour
+public class EliminarObjetos : MonoBehaviour
 {
 
-    [SerializeField, Tooltip("lugar donde se eliminaran los objetos")]
-    private Vector2 zRange = new Vector2(30, -10);
-    
+    [SerializeField, Tooltip("Lugar para eliminar objetos")]
+    private Vector2 rangoELiminar = new Vector2(30, -10);
     
     // Start is called before the first frame update
     void Start()
@@ -18,7 +17,7 @@ public class DestroyOutOfBounds : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (transform.position.z > zRange.x || transform.position.z < zRange.y)
+        if (transform.position.z > rangoELiminar.x || transform.position.z < rangoELiminar.y)
         {
             Destroy(gameObject);
         }

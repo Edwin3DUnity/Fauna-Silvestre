@@ -63,7 +63,10 @@ PrefabInstance:
       propertyPath: speed
       value: 18
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 871366009327017684, guid: 26d9d5575f575b24ba21e81c34eae01f, type: 3}
+    - {fileID: 8275826298195393283, guid: 26d9d5575f575b24ba21e81c34eae01f, type: 3}
+    - {fileID: 5585744011413060206, guid: 26d9d5575f575b24ba21e81c34eae01f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 26d9d5575f575b24ba21e81c34eae01f, type: 3}
 --- !u!1 &8794160842232606423 stripped
 GameObject:

@@ -9,16 +9,18 @@ public class PlayerController : MonoBehaviour
 
 {
 
-    [SerializeField, Range(-200, 200), Tooltip("Variable de velocidad del player ")]
-    private float speed = 12;
 
+    [SerializeField, Range(-200, 200), Tooltip("Velocidad de movimiento personaje")]
+    private float speed;
+
+    
+    
     private float horizontal;
 
-    [SerializeField, Range(-16, 16), Tooltip("Rango en posicion X de movimiento maxima del player")]
-    private float xRange = 16;
+    [SerializeField, Range(-22, 22), Tooltip("Lugar de movimiento personaje limite")]
+    private float xRange =16;
 
-    public GameObject prefabFood;
-    
+    public GameObject prefabdisparar;
     
     // Start is called before the first frame update
     void Start()
@@ -29,13 +31,14 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       MovimientoPlayer();  
-        DispararComida();
+      MovimientoPersonaje();        
+
+        Disparar();
+
     }
 
 
-
-    private void MovimientoPlayer()
+    private void MovimientoPersonaje()
     {
         horizontal = Input.GetAxis("Horizontal");
         
@@ -44,21 +47,23 @@ public class PlayerController : MonoBehaviour
         if (transform.position.x < -xRange)
         {
             transform.position = new Vector3(-xRange, transform.position.y, transform.position.z);
-            
         }
 
         if (transform.position.x > xRange)
         {
             transform.position = new Vector3(xRange, transform.position.y, transform.position.z);
         }
-
+        
     }
 
-    private void DispararComida()
+    private void Disparar()
     {
+
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Instantiate(prefabFood, transform.position, prefabFood.transform.rotation);
+            Instantiate(prefabdisparar, transform.position, prefabdisparar.transform.rotation);
         }
+        
+        
     }
 }
