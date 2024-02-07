@@ -5,8 +5,8 @@ using UnityEngine;
 public class EliminarObjetos : MonoBehaviour
 {
 
-    [SerializeField, Tooltip("Lugar para eliminar objetos")]
-    private Vector2 rangoELiminar = new Vector2(30, -10);
+    [SerializeField, Tooltip("Limite para eliminar Objto")]
+    private Vector2 limite = new Vector2(30, -15);
     
     // Start is called before the first frame update
     void Start()
@@ -17,9 +17,12 @@ public class EliminarObjetos : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (transform.position.z > rangoELiminar.x || transform.position.z < rangoELiminar.y)
+        if (transform.position.z > limite.x || transform.position.z < limite.y)
         {
             Destroy(gameObject);
         }
+        
+        
+        
     }
 }
