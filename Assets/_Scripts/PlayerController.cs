@@ -55,7 +55,7 @@ public class PlayerController : MonoBehaviour
   {
     if (Input.GetKeyDown(KeyCode.Space))
     {
-      Instantiate(food, transform.position, food.transform.rotation);
+      Instantiate(food, transform.position , food.transform.rotation);
     }
     
     
