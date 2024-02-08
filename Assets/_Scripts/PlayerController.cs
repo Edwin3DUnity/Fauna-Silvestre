@@ -21,11 +21,11 @@ public class PlayerController : MonoBehaviour
     private float xRange = 15;
 
     public GameObject pizza;
-    
+    [FormerlySerializedAs("posZdispararOffset")] public Vector3 posYdispararOffset;
     private void Start()
     {
-        
-        
+        posYdispararOffset = new Vector3(transform.position.x, 1, transform.position.z);
+
     }
 
 
@@ -59,7 +59,7 @@ public class PlayerController : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Space))
         {
-            Instantiate(pizza, transform.position , pizza.transform.rotation);
+            Instantiate(pizza, transform.position + posYdispararOffset, pizza.transform.rotation);
         }
         
     }
