@@ -4,49 +4,54 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
+
     public GameObject[] enemies;
     private int indexEnemies;
 
-    [SerializeField, Range(-15, 15), Tooltip("Limite para generar enemigos")]
-    private float LimiteX = 14;
 
-    private float spawnPosY;
-    private float spawnPosZ;
+    [SerializeField, Range(-18, 18), Tooltip("Rango para generar enemigos en posicion x")]
+    private float xRange = 15;
 
-    [SerializeField, Range(0.1f, 5), Tooltip("tiempo de espera para lanzar el primer enemigo")]
-    private float starDalay = 2;
+    private float posY;
+    private float posZ;
 
+    [SerializeField, Range(0, 3), Tooltip("Tiempo inicial para primer enemigo generado")]
+    private float stardalay = 1;
 
-    [SerializeField, Range(0.1f, 5), Tooltip("tiempo para lanzar el proximo enemigo")]
-    private float spawnInterval = 1;
+    [SerializeField, Range(1, 4), Tooltip("Tiempo para generar el próximo enemigo")]
+    private float waitNextEnemy =2;
+    
     
     // Start is called before the first frame update
     void Start()
     {
-        spawnPosY = transform.position.y;
-        spawnPosZ = transform.position.z;
-        
-        
-        InvokeRepeating("GenerarEnemigos", starDalay, spawnInterval);
+        posY = transform.position.y;
+        posZ = transform.position.z;
+        waitNextEnemy = Random.Range(2, 4);
+        InvokeRepeating("GenerarEnemies", stardalay, waitNextEnemy);
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        Debug.LogFormat("tiempo de spawn enemigo " + waitNextEnemy );
     }
 
-    private void GenerarEnemigos()
+    private void GenerarEnemies()
     {
+        float randomXPos = Random.Range(-xRange, xRange);
+
+        Vector3 posRandomEnemies = new Vector3(randomXPos, posY, posZ);
+
+
         indexEnemies = Random.Range(0, enemies.Length);
-        float posRandomX = Random.Range(-LimiteX, LimiteX);
-
-        Vector3 posSpawnEnemies = new Vector3(posRandomX,spawnPosY, spawnPosZ );
-
-        Instantiate(enemies[indexEnemies], posSpawnEnemies, enemies[indexEnemies].transform.rotation);
-
+        
+        Instantiate(enemies[indexEnemies], posRandomEnemies, enemies[indexEnemies].transform.rotation);
 
 
 
     }
+    
+    
 }

@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class MoverAdelante : MonoBehaviour
 {
-
-    [SerializeField, Range(-200, 200), Tooltip("velocidad de movimiento")]
-    private float speed = 15;
+    [SerializeField, Range(0, 20), Tooltip("velocidad de movimiento")]
+    private float speed = 8;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -18,4 +18,6 @@ public class MoverAdelante : MonoBehaviour
     {
         transform.Translate(Vector3.forward * speed * Time.deltaTime);
     }
+    
+    
 }

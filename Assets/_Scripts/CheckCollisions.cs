@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class CheckCollisions : MonoBehaviour
 {
+    
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -17,10 +19,9 @@ public class CheckCollisions : MonoBehaviour
         
     }
 
-
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player") || other.CompareTag("Projectile"))
+        if (other.gameObject.CompareTag("Projectile") || other.gameObject.CompareTag("Player"))
         {
             Destroy(gameObject);
             Destroy(other.gameObject);
