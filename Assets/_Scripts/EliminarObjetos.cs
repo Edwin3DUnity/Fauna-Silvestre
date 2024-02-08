@@ -25,6 +25,7 @@ public class EliminarObjetos : MonoBehaviour
         {
             Destroy(gameObject);
             Time.timeScale = 0.2f;
+            Debug.Log("finalizado GAME  OVER");
             
         }
     }
