@@ -17,14 +17,13 @@ public class CheckCollisions : MonoBehaviour
         
     }
 
+
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Projectile") || other.CompareTag("Player"))
+        if (other.CompareTag("Player") || other.CompareTag("Projectile"))
         {
             Destroy(gameObject);
             Destroy(other.gameObject);
         }
-        
-        
     }
 }
