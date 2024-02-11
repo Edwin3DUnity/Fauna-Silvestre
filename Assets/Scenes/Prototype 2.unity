@@ -152,15 +152,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65e0d17745c1e0544ae5d5a8ecc78c61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemies:
-  - {fileID: 3195565048126213596, guid: 1796e14647b00c746b73aa02942ae566, type: 3}
-  - {fileID: 7451430211244206456, guid: 75ec5132502167c4fbd06d67b71def99, type: 3}
-  - {fileID: 372570687168125009, guid: bcf52e4ab807cb746b63e6fd8fd792ac, type: 3}
-  - {fileID: 8751661592085392789, guid: 3a3ce0ce2efd21d4fbbfeb0baf0fcc24, type: 3}
-  - {fileID: 6518160206643589475, guid: 5594379647a8bb64ea572a040c891210, type: 3}
-  xRange: 15
-  stardalay: 1
-  waitNextEnemy: 3.57
 --- !u!4 &158856696
 Transform:
   m_ObjectHideFlags: 0
@@ -539,10 +530,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 16
   xRange: 16
-  food: {fileID: 3959278722202766486, guid: 69293b1d4f780774d91850a459ec89ba, type: 3}
-  counter: 0
-  waitNextShoot: 1
-  posYShoot: {x: 0, y: 1.5, z: 0}
+  pizza: {fileID: 3959278722202766486, guid: 69293b1d4f780774d91850a459ec89ba, type: 3}
+  firstShoot: 0
+  waitNextShoot: 0.5
 --- !u!54 &682475506
 Rigidbody:
   m_ObjectHideFlags: 0

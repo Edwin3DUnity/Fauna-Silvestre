@@ -29,6 +29,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField, Range(0, 5), Tooltip(" Tiempo de espera siguiente disparo")]
     private float waitNextShoot=1;
     
+    
+    
     private void Start()
     {
         posY = transform.position.y;
@@ -69,10 +71,12 @@ public class PlayerController : MonoBehaviour
     private void Disparar()
     {
         firstShoot += Time.deltaTime;
-        Vector3 posPersonaje = new Vector3(posX, posY, posZ);
-        if (Input.GetKeyDown(KeyCode.Space))
+        Vector3 posOffsetY = new Vector3(0, 1, 0);
+        if (Input.GetKeyDown(KeyCode.Space) && firstShoot >= waitNextShoot)
         {
-            Instantiate(pizza, transform.position, pizza.transform.rotation );
+            Instantiate(pizza, transform.position + posOffsetY, pizza.transform.rotation );
+            firstShoot = 0;
+
         }
         
     }
