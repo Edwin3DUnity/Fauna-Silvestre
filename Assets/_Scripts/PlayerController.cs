@@ -22,7 +22,12 @@ public class PlayerController : MonoBehaviour
     private float posX;
 
     public GameObject pizza;
-    
+
+    [SerializeField, Range(0 ,5), Tooltip("Tiempo para primer disparo")]
+    private float firstShoot =0;
+
+    [SerializeField, Range(0, 5), Tooltip(" Tiempo de espera siguiente disparo")]
+    private float waitNextShoot=1;
     
     private void Start()
     {
@@ -63,11 +68,11 @@ public class PlayerController : MonoBehaviour
 
     private void Disparar()
     {
-
+        firstShoot += Time.deltaTime;
         Vector3 posPersonaje = new Vector3(posX, posY, posZ);
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Instantiate(pizza, transform.position.x, transform.position.y, transform.position.z, pizza.transform.rotation );
+            Instantiate(pizza, transform.position, pizza.transform.rotation );
         }
         
     }
