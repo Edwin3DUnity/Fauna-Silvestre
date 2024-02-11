@@ -1,88 +1,74 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-
+using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Serialization;
-using Random = UnityEngine.Random;
 
 
 public class PlayerController : MonoBehaviour
 
 {
 
-
-    [SerializeField, Range(1, 20), Tooltip("velocidad de movimiento personaje")]
-    private float speed = 15;
-
-    [SerializeField, Range(-17, 17), Tooltip("Limite de movimiento en X")]
-    private float xRange = 16;
-
-    private float posY, posZ;
-
-    public GameObject food;
+    [SerializeField, Range(-20, 200), Tooltip("velocidad de movimiento")]
+    private float speed = 12;
 
     private float horizontal;
 
-    [SerializeField, Range(0, 5), Tooltip("tiempo para inicio primer desparo")] float counter =0;
+    [SerializeField, Range(-20, 20), Tooltip("Limite movimiento del eje X player")]
+    private float xRange = 16;
 
-    [SerializeField, Range(0, 5), Tooltip("Tiempo para siguiente disparo")]
-    private float waitNextShoot = 1;
+    private float posY;
+    private float posZ;
+    private float posX;
 
-    [SerializeField,  Tooltip("Posicion para disparar")]
-    private Vector3 posYShoot = new Vector3(0 , 1.5f,0);
+    public GameObject pizza;
+    
+    
     private void Start()
     {
         posY = transform.position.y;
         posZ = transform.position.z;
+        posX = transform.position.x;
+
 
     }
 
 
     private void Update()
     {
-       MovimientoPersonaje();
-       Disparar();
+        MovimientoPersonaje();
+        Disparar();
+        
     }
+
 
 
     private void MovimientoPersonaje()
     {
         horizontal = Input.GetAxis("Horizontal");
-        
         transform.Translate(Vector3.right * speed * Time.deltaTime * horizontal);
+        
+        
 
-        if (transform.position.x < -xRange)
+        if (transform.position.x <= -xRange)
         {
-            transform.position = new Vector3(-xRange, posY, posZ );
+            transform.position = new Vector3(-xRange, posZ,posZ);
         }
 
-        if (transform.position.x > xRange)
+        if (transform.position.x >= xRange)
         {
             transform.position = new Vector3(xRange, posY, posZ);
         }
-
     }
 
     private void Disparar()
     {
-        counter += Time.deltaTime;
-        if (counter >= waitNextShoot)
-        {
-           
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                Instantiate(food, transform.position + posYShoot, food.transform.rotation);
-                
-                
-                counter = 0;
-                waitNextShoot = Random.Range(0.1f,1);
-            }
 
+        Vector3 posPersonaje = new Vector3(posX, posY, posZ);
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Instantiate(pizza, transform.position.x, transform.position.y, transform.position.z, pizza.transform.rotation );
         }
         
-        
     }
- 
-    
 }
