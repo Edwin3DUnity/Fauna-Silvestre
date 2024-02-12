@@ -3746,10 +3746,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8751661592085046467}
   - component: {fileID: 8751661592078101815}
-  - component: {fileID: 4202702326927287385}
   - component: {fileID: 3022152643341197448}
-  - component: {fileID: 1233544737823638900}
-  - component: {fileID: 3022620758129333063}
+  - component: {fileID: 8957341630471212991}
   m_Layer: 0
   m_Name: Dog_Beagle_01
   m_TagString: Untagged
@@ -3830,19 +3828,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &4202702326927287385
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8751661592085392789}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6903f1559fb777479583312a7ac0fab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 6
 --- !u!65 &3022152643341197448
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3856,7 +3841,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.081589594, y: 0.20690891, z: 0.27314925}
   m_Center: {x: 0.0026855594, y: 0.09756976, z: 0.03580559}
---- !u!114 &1233544737823638900
+--- !u!114 &8957341630471212991
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3865,22 +3850,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 8751661592085392789}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7da92ea0eff36b647b408a8c9b5f3b6b, type: 3}
+  m_Script: {fileID: 11500000, guid: 15a611e580d791045ad5da4352692cfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  limiteZ: {x: 30, y: -10}
---- !u!114 &3022620758129333063
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8751661592085392789}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b980f3cc2e5f33048ae1815b8650e454, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  limiteZ: {x: 32, y: -5}
 --- !u!1 &8751661592085392957
 GameObject:
   m_ObjectHideFlags: 0

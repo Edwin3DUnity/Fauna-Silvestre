@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3844485128662155}
   - component: {fileID: 8338062156704035935}
   - component: {fileID: 4556849571311417696}
-  - component: {fileID: 2634481104661516002}
+  - component: {fileID: 6435605327133217766}
   m_Layer: 0
   m_Name: Food_Pizza_01
   m_TagString: Projectile
@@ -129,7 +129,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 15
---- !u!114 &2634481104661516002
+--- !u!114 &6435605327133217766
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -138,7 +138,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3959278722202766486}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7da92ea0eff36b647b408a8c9b5f3b6b, type: 3}
+  m_Script: {fileID: 11500000, guid: 15a611e580d791045ad5da4352692cfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  limiteZ: {x: 30, y: -10}
+  limiteZ: {x: 32, y: -5}

@@ -132,7 +132,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 158856696}
-  - component: {fileID: 158856695}
+  - component: {fileID: 158856697}
   m_Layer: 0
   m_Name: SpawnManager
   m_TagString: Untagged
@@ -140,18 +140,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &158856695
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 158856694}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65e0d17745c1e0544ae5d5a8ecc78c61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &158856696
 Transform:
   m_ObjectHideFlags: 0
@@ -167,6 +155,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &158856697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 158856694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f215dd076be7b6647bee64323c52933d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemies:
+  - {fileID: 3195565048126213596, guid: 1796e14647b00c746b73aa02942ae566, type: 3}
+  - {fileID: 7451430211244206456, guid: 75ec5132502167c4fbd06d67b71def99, type: 3}
+  - {fileID: 372570687168125009, guid: bcf52e4ab807cb746b63e6fd8fd792ac, type: 3}
+  - {fileID: 8751661592085392789, guid: 3a3ce0ce2efd21d4fbbfeb0baf0fcc24, type: 3}
+  - {fileID: 6518160206643589475, guid: 5594379647a8bb64ea572a040c891210, type: 3}
+  xRange: 14
+  stardaley: 0
+  waitNextSpawn: 3
 --- !u!1 &170076733
 GameObject:
   m_ObjectHideFlags: 0
@@ -612,7 +621,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400046, guid: 7b6675de545141649953fd8adec4561b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.27
+      value: -0.6
       objectReference: {fileID: 0}
     - target: {fileID: 400046, guid: 7b6675de545141649953fd8adec4561b, type: 3}
       propertyPath: m_LocalRotation.w
