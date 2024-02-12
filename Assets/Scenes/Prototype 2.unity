@@ -174,8 +174,8 @@ MonoBehaviour:
   - {fileID: 8751661592085392789, guid: 3a3ce0ce2efd21d4fbbfeb0baf0fcc24, type: 3}
   - {fileID: 6518160206643589475, guid: 5594379647a8bb64ea572a040c891210, type: 3}
   xRange: 14
-  stardaley: 0
-  waitNextSpawn: 3
+  stardaley: 1
+  waitNextSpawn: 2
 --- !u!1 &170076733
 GameObject:
   m_ObjectHideFlags: 0
