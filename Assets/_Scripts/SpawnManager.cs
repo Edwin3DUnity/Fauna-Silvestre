@@ -16,10 +16,10 @@ public class SpawnManager : MonoBehaviour
     private float posZ;
 
     [SerializeField, Range(0, 05f), Tooltip("Tiempo inicial para generar enemigos")]
-    private float stardaley =0;
+    private float stardaley =1;
 
-    [SerializeField, Range(0, 5f), Tooltip("Tiempo de espera para proximo spawneo de enemigos")]
-    private float waitNextSpawn ;
+    [SerializeField, Range(0, 4f), Tooltip("Tiempo de espera para proximo spawneo de enemigos")]
+    private float waitNextSpawn =2 ;
     
     
     // Start is called before the first frame update
@@ -27,6 +27,7 @@ public class SpawnManager : MonoBehaviour
     {
        posY = transform.position.y;
        posZ = transform.position.z;
+      
         InvokeRepeating("GenerarEnemigos", stardaley, waitNextSpawn);
        
 
@@ -35,8 +36,8 @@ public class SpawnManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        stardaley += Time.deltaTime;
+        waitNextSpawn = Random.Range(2, 4);
+      //  stardaley += Time.deltaTime;
     }
 
     private void GenerarEnemigos()
@@ -45,9 +46,9 @@ public class SpawnManager : MonoBehaviour
 
          
         
-         if(stardaley >= waitNextSpawn)
-         {
-             waitNextSpawn = Random.Range(0, 5);
+        
+         
+           //  waitNextSpawn = Random.Range(0, 5);
              float xPosRandom = Random.Range(-xRange, xRange);
 
              Vector3 posRandom = new Vector3(xPosRandom, posY, posZ);
@@ -55,8 +56,8 @@ public class SpawnManager : MonoBehaviour
              indexEnemies = Random.Range(0, enemies.Length);
 
              Instantiate(enemies[indexEnemies], posRandom, enemies[indexEnemies].transform.rotation);
-             stardaley = 0;
-         } 
+            // stardaley = 0;
+         
         
        
         
