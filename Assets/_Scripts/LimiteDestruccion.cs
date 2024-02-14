@@ -27,6 +27,7 @@ public class LimiteDestruccion : MonoBehaviour
         {
             Destroy((gameObject));
             Time.timeScale = 0.1F;
+            Debug.Log("Game Over");
         }
         
         
