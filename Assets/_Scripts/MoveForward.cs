@@ -2,11 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MoverAdelante : MonoBehaviour
+public class MoveForward : MonoBehaviour
 {
 
-    [SerializeField, Range(-2, 50), Tooltip("velocidad de movimiento ")]
-    private float speed =  15;
+    [SerializeField, Range(0, 20), Tooltip(" Velocidad de movimiento hacia adelante")]
+    private float speed;
+
+
+    
     // Start is called before the first frame update
     void Start()
     {
