@@ -148,7 +148,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 158856694}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 29.92}
+  m_LocalPosition: {x: 0, y: 0, z: 28}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -173,9 +173,9 @@ MonoBehaviour:
   - {fileID: 372570687168125009, guid: bcf52e4ab807cb746b63e6fd8fd792ac, type: 3}
   - {fileID: 8751661592085392789, guid: 3a3ce0ce2efd21d4fbbfeb0baf0fcc24, type: 3}
   - {fileID: 6518160206643589475, guid: 5594379647a8bb64ea572a040c891210, type: 3}
-  xRange: 0
-  startDelay: 1
-  timeNextSpawn: 2
+  xRange: 14
+  firstEnemiTime: 1
+  nextEnemy: 3
 --- !u!1 &170076733
 GameObject:
   m_ObjectHideFlags: 0
@@ -520,6 +520,29 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!1 &937734883 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100046, guid: 7b6675de545141649953fd8adec4561b, type: 3}
+  m_PrefabInstance: {fileID: 1201515118}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &937734888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 937734883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f964ceda667a9dc4e9d1bc68b49d5525, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 9
+  xRange: 16
+  food: {fileID: 3959278722202766486, guid: 69293b1d4f780774d91850a459ec89ba, type: 3}
+  offsetY: {x: 0, y: 1, z: 0}
+  startDalay: 0
+  waitNextShoot: 1
 --- !u!1 &992285705
 GameObject:
   m_ObjectHideFlags: 0
@@ -579,7 +602,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400046, guid: 7b6675de545141649953fd8adec4561b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.8
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400046, guid: 7b6675de545141649953fd8adec4561b, type: 3}
       propertyPath: m_LocalRotation.w
@@ -609,10 +632,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 682475510, guid: 7b6675de545141649953fd8adec4561b, type: 3}
-      propertyPath: pizza
-      value: 
-      objectReference: {fileID: 3959278722202766486, guid: 69293b1d4f780774d91850a459ec89ba, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7b6675de545141649953fd8adec4561b, type: 3}
 --- !u!1 &1590138454

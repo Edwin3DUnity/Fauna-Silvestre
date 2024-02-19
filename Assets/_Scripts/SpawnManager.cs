@@ -4,26 +4,29 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
+
     public GameObject[] enemies;
     private int indexEnemies;
 
-    [SerializeField, Range(-14, 14), Tooltip(" limite en el Eje X para spawnear enemigos")]
-    private float xRange;
+    [SerializeField, Range(-14, 14), Tooltip("Limite para generar enemigos")]
+    private float xRange = 14;
 
     private float posY;
     private float posZ;
 
-    [SerializeField] private float startDelay = 1;
+   [SerializeField, Tooltip("Tiempo de espera para el primer enemigo")] private float firstEnemiTime = 1;
 
-    [SerializeField] private float timeNextSpawn = 2;
+   [SerializeField, Range(1, 5), Tooltip("Tiempo de espera para el siguiente Enemy")]
+   private float nextEnemy = 3; 
+    
     // Start is called before the first frame update
     void Start()
     {
         posY = transform.position.y;
         posZ = transform.position.z;
         
-        InvokeRepeating("GenerarEnemies", startDelay, timeNextSpawn);
-        
+        InvokeRepeating("GenerarEnemigos", firstEnemiTime, nextEnemy);
+
     }
 
     // Update is called once per frame
@@ -32,18 +35,17 @@ public class SpawnManager : MonoBehaviour
         
     }
 
-    private void GenerarEnemies()
+
+    private void GenerarEnemigos()
     {
         indexEnemies = Random.Range(0, enemies.Length);
-        float xRandomPos = Random.Range(-14, 14);
 
-        Vector3 randomPos = new Vector3(xRandomPos, posY, posZ);
+        xRange = Random.Range(-14, 14);
 
-        Instantiate(enemies[indexEnemies], randomPos, enemies[indexEnemies].transform.rotation);
+        Vector3 posRandomSpawn = new Vector3(xRange, posY, posZ);
 
-
-
+        Instantiate(enemies[indexEnemies], posRandomSpawn, enemies[indexEnemies].transform.rotation);
 
     }
-
+    
 }

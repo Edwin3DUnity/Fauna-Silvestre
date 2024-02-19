@@ -3,8 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CheckColisions : MonoBehaviour
+public class CheckCollisions : MonoBehaviour
 {
+    
+    
     
     
     // Start is called before the first frame update
@@ -19,22 +21,19 @@ public class CheckColisions : MonoBehaviour
         
     }
 
-
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Projectile"))
-        {
-            Destroy(other.gameObject);
-            Destroy(gameObject);
-        }
-
         if (other.CompareTag("Player"))
         {
-            Destroy((other.gameObject));
             Destroy(gameObject);
-            Time.timeScale = 0.1f;
-            Debug.Log("Game Over");
+            Destroy(other.gameObject);
+            
+        }
 
+        if (other.CompareTag("Projectile"))
+        {
+            Destroy((gameObject));
+            Destroy(other.gameObject);
         }
     }
 }
