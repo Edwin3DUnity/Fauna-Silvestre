@@ -5,28 +5,29 @@ using UnityEngine;
 public class SpawnManager : MonoBehaviour
 {
 
-    public GameObject[] enemies;
-    private int indexEnemies;
 
-    [SerializeField, Range(-14, 14), Tooltip("Limite para generar enemigos")]
-    private float xRange = 14;
+    public GameObject[] animals;
+    private int indexAnimals;
 
-    private float posY;
-    private float posZ;
+    [SerializeField, Range(-15, 15), Tooltip("Rango en eje X para spawnear animales")]
+    private float xRange =14;
 
-   [SerializeField, Tooltip("Tiempo de espera para el primer enemigo")] private float firstEnemiTime = 1;
+    private float posYSpawn;
+    private float posZSpawn;
 
-   [SerializeField, Range(1, 5), Tooltip("Tiempo de espera para el siguiente Enemy")]
-   private float nextEnemy = 3; 
-    
+
+    private float animalsFirtsTime = 1;
+
+    [SerializeField, Range(0.1f, 2), Tooltip("Tiempo para spawnear el siguiente animal")] private float
+    animalsNextSpawn = 2;
     // Start is called before the first frame update
     void Start()
     {
-        posY = transform.position.y;
-        posZ = transform.position.z;
+        posYSpawn = transform.position.y;
+        posZSpawn = transform.position.z;
         
-        InvokeRepeating("GenerarEnemigos", firstEnemiTime, nextEnemy);
-
+        
+        InvokeRepeating("GenerarAnimales", animalsFirtsTime, animalsNextSpawn);
     }
 
     // Update is called once per frame
@@ -36,16 +37,20 @@ public class SpawnManager : MonoBehaviour
     }
 
 
-    private void GenerarEnemigos()
+    private void GenerarAnimales()
     {
-        indexEnemies = Random.Range(0, enemies.Length);
+
+        indexAnimals = Random.Range(0, animals.Length);
 
         xRange = Random.Range(-14, 14);
 
-        Vector3 posRandomSpawn = new Vector3(xRange, posY, posZ);
+        Vector3 posSpawnAnimals = new Vector3(xRange, posYSpawn, posZSpawn);
 
-        Instantiate(enemies[indexEnemies], posRandomSpawn, enemies[indexEnemies].transform.rotation);
+        Instantiate(animals[indexAnimals], posSpawnAnimals, animals[indexAnimals].transform.rotation);
+
+
+
+
 
     }
-    
 }

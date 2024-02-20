@@ -3747,9 +3747,8 @@ GameObject:
   - component: {fileID: 8751661592085046467}
   - component: {fileID: 8751661592078101815}
   - component: {fileID: 3022152643341197448}
-  - component: {fileID: -1513089046303321043}
-  - component: {fileID: 1207138317651574357}
-  - component: {fileID: -2138758108092695345}
+  - component: {fileID: 2692413860331284204}
+  - component: {fileID: -3132300639247275344}
   m_Layer: 0
   m_Name: Dog_Beagle_01
   m_TagString: Untagged
@@ -3765,7 +3764,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8751661592085392789}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 28}
   m_LocalScale: {x: 6, y: 6, z: 6}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3843,7 +3842,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.081589594, y: 0.20690891, z: 0.27314925}
   m_Center: {x: 0.0026855594, y: 0.09756976, z: 0.03580559}
---- !u!114 &-1513089046303321043
+--- !u!114 &2692413860331284204
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3856,7 +3855,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
---- !u!114 &1207138317651574357
+--- !u!114 &-3132300639247275344
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3865,20 +3864,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8751661592085392789}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37718a415eb579b409d216218b4ea857, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  limiteZ: {x: -8, y: 30}
---- !u!114 &-2138758108092695345
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8751661592085392789}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c8420cecf7b1d44f8c4243a771d784a, type: 3}
+  m_Script: {fileID: 11500000, guid: f215dd076be7b6647bee64323c52933d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &8751661592085392957
