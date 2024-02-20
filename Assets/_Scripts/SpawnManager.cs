@@ -39,12 +39,15 @@ public class SpawnManager : MonoBehaviour
 
     private void GenerarAnimales()
     {
-
+        float xPosRandom = Random.Range(-xRange, xRange);
+        
+        Vector3 posSpawnAnimals = new Vector3(xPosRandom, posYSpawn, posZSpawn);
+        
         indexAnimals = Random.Range(0, animals.Length);
 
-        xRange = Random.Range(-14, 14);
+      
 
-        Vector3 posSpawnAnimals = new Vector3(xRange, posYSpawn, posZSpawn);
+   
 
         Instantiate(animals[indexAnimals], posSpawnAnimals, animals[indexAnimals].transform.rotation);
 
