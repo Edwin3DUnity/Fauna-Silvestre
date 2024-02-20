@@ -540,9 +540,9 @@ MonoBehaviour:
   speed: 9
   xRange: 16
   food: {fileID: 3959278722202766486, guid: 69293b1d4f780774d91850a459ec89ba, type: 3}
-  offsetY: {x: 0, y: 1, z: 0}
+  offsetY: {x: 0, y: 0, z: 0}
   startDalay: 0
-  waitNextShoot: 1
+  waitNextShoot: 2
 --- !u!1 &992285705
 GameObject:
   m_ObjectHideFlags: 0
