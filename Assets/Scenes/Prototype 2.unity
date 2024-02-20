@@ -538,7 +538,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   xRange: 16
-  food: {fileID: 0}
+  food: {fileID: 3959278722202766486, guid: 69293b1d4f780774d91850a459ec89ba, type: 3}
   firstShootTime: 0
   nextShoot: 1
 --- !u!1 &992285705

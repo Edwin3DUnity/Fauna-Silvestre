@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 9089443047809505830}
   - component: {fileID: -6074451611713192843}
   - component: {fileID: 30376452418185901}
+  - component: {fileID: 2746914642718389931}
+  - component: {fileID: -8436224093773791654}
   m_Layer: 0
   m_Name: Animal_Stag_01
   m_TagString: Untagged
@@ -104,6 +106,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f215dd076be7b6647bee64323c52933d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animals: []
+  xRange: 14
+  animalsNextSpawn: 2
+--- !u!114 &2746914642718389931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 372570687168125009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c8420cecf7b1d44f8c4243a771d784a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-8436224093773791654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 372570687168125009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8f115cd029e8054687dc97872c32aad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  limiteZ: {x: 31, y: -10}
 --- !u!1 &372570687168143839
 GameObject:
   m_ObjectHideFlags: 0

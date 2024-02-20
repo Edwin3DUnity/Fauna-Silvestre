@@ -23,6 +23,19 @@ public class PlayerController : MonoBehaviour
 
    [SerializeField, Range(1, 3), Tooltip("Tiempo de espera para el siguiente disparo")]
    private float nextShoot = 1;
+
+
+   private bool gameOver;
+
+   public bool GameOver
+   {
+       get => gameOver;
+       set
+       {
+           gameOver = value;
+           
+       }
+   }
     
     // Start is called before the first frame update
     void Start()
