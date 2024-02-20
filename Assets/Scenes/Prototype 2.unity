@@ -167,15 +167,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f215dd076be7b6647bee64323c52933d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemies:
+  animals:
   - {fileID: 3195565048126213596, guid: 1796e14647b00c746b73aa02942ae566, type: 3}
   - {fileID: 7451430211244206456, guid: 75ec5132502167c4fbd06d67b71def99, type: 3}
   - {fileID: 372570687168125009, guid: bcf52e4ab807cb746b63e6fd8fd792ac, type: 3}
   - {fileID: 8751661592085392789, guid: 3a3ce0ce2efd21d4fbbfeb0baf0fcc24, type: 3}
   - {fileID: 6518160206643589475, guid: 5594379647a8bb64ea572a040c891210, type: 3}
   xRange: 14
-  firstEnemiTime: 1
-  nextEnemy: 3
+  animalsNextSpawn: 2
 --- !u!1 &170076733
 GameObject:
   m_ObjectHideFlags: 0
@@ -525,7 +524,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 100046, guid: 7b6675de545141649953fd8adec4561b, type: 3}
   m_PrefabInstance: {fileID: 1201515118}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &937734888
+--- !u!114 &937734893
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -537,12 +536,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f964ceda667a9dc4e9d1bc68b49d5525, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 9
+  speed: 10
   xRange: 16
   food: {fileID: 3959278722202766486, guid: 69293b1d4f780774d91850a459ec89ba, type: 3}
-  offsetY: {x: 0, y: 1, z: 0}
-  startDalay: 0
-  waitNextShoot: 1
+  firstShootTime: 0
+  nextShoot: 1
 --- !u!1 &992285705
 GameObject:
   m_ObjectHideFlags: 0
