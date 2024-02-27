@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 372570687168464551}
   - component: {fileID: 372570687177563631}
   - component: {fileID: 9089443047809505830}
+  - component: {fileID: -4534551403846996532}
   m_Layer: 0
   m_Name: Animal_Stag_01
   m_TagString: Untagged
@@ -77,6 +78,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.12086429, y: 0.5076089, z: 0.3868693}
   m_Center: {x: 0.0018868338, y: 0.24619634, z: 0.05565381}
+--- !u!114 &-4534551403846996532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 372570687168125009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aabe15dccd5de474183db258d7e7a820, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
 --- !u!1 &372570687168143839
 GameObject:
   m_ObjectHideFlags: 0

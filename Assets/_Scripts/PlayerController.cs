@@ -14,6 +14,9 @@ public class PlayerController : MonoBehaviour
 
     private float horizontal;
 
+    private float counter = 0;
+    [SerializeField, Range(1,5)] private float  nextShoot = 2;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -64,10 +67,17 @@ public class PlayerController : MonoBehaviour
 
     private void Disparar()
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
-        {
-            Instantiate(food, transform.position.x, transform.position.y, transform.position.z , food.transform.rotation);
+        counter += Time.deltaTime;
 
+        Vector3 posInstanci = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+        Vector3 offsetY = new Vector3(0,1,0);
+
+
+        if(Input.GetKeyDown(KeyCode.Space) && counter >= nextShoot )
+        {
+            Instantiate(food, posInstanci + offsetY, food.transform.rotation);
+
+            counter =0;
         }
 
 
