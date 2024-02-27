@@ -5,9 +5,7 @@ using UnityEngine;
 public class MoveForward : MonoBehaviour
 {
 
-    [SerializeField, Range(-20, 20), Tooltip("Velocidad de movimiento hacia adelante")]
-    private float speed = 5;
-    
+    [SerializeField, Range(0, 20), Tooltip("Velocidad de movimiento")] private float speed = 5;
     // Start is called before the first frame update
     void Start()
     {

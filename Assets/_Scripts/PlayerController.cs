@@ -1,91 +1,78 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class PlayerController : MonoBehaviour
 {
 
-    [FormerlySerializedAs("Speed")] [SerializeField, Range(0,50), Tooltip("Velocidad de movimiento del personaje")] private float speed = 8;
+
+    [SerializeField, Range(0, 50), Tooltip("Velocidad de movimiento")] private float speed;
+
+    [SerializeField, Range(-16, 16), Tooltip("Limite de moviviento en el eje X")] private float xRange = 16;
+
+    public GameObject food;
 
     private float horizontal;
-    private float posY;
-    private float posZ;
 
-    [SerializeField, Range(-17, 16), Tooltip("Limite de movimiento del personaje en el eje X")]
-   private float xRange = 16;
-
-
-   [SerializeField]   private GameObject food;
-
-   [SerializeField, Range(0, 3), Tooltip("Tiempo para primer shoot")]
-   private float firstShootTime;
-
-   [SerializeField, Range(1, 3), Tooltip("Tiempo de espera para el siguiente disparo")]
-   private float nextShoot = 1;
-
-
-   private bool gameOver;
-
-   public bool GameOver
-   {
-       get => gameOver;
-       set
-       {
-           gameOver = value;
-           
-       }
-   }
-    
     // Start is called before the first frame update
     void Start()
     {
-        posY = transform.position.y;
-        posZ = transform.position.z;
-
-       
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        MovimientoPersonaje();
-        
+        Movimiento();
+
+        LimiteMoveX();
+
         Disparar();
     }
 
-    private void MovimientoPersonaje()
+
+    private void Movimiento()
     {
         horizontal = Input.GetAxis("Horizontal");
-        
-        transform.Translate(Vector3.right * speed * Time.deltaTime * horizontal);
 
-        if (transform.position.x < -xRange )
-        {
-            transform.position = new Vector3(-xRange, posY, posZ);
-            
-        }
+        transform.Translate(Vector3.right * speed * horizontal * Time.deltaTime);
 
-        if (transform.position.x > xRange)
-        {
-            transform.position = new Vector3(xRange, posY, posZ);
-        }
+
     }
+
+
+
+    private void LimiteMoveX()
+    {
+        if (transform.position.x <=  -xRange  )
+        {
+            transform.position = new Vector3(-xRange, transform.position.y, transform.position.z) ;
+
+
+
+        }
+        
+        if (transform.position.x >= xRange)
+        {
+            transform.position = new Vector3(xRange, transform.position.y, transform.position.z);
+        }
+
+
+
+    }
+
 
     private void Disparar()
     {
-
-        firstShootTime += Time.deltaTime;
-        Vector3 posSpawn = new Vector3(transform.position.x, posY, posZ);
-
-        Vector3 offsetY = new Vector3(0, 1, 0);
-        
-        if (Input.GetKeyDown(KeyCode.Space) && firstShootTime >= nextShoot)
+        if(Input.GetKeyDown(KeyCode.Escape))
         {
-            Instantiate(food, posSpawn + offsetY, food.transform.rotation);
-            firstShootTime = 0;
+            Instantiate(food, transform.position.x, transform.position.y, transform.position.z , food.transform.rotation);
+
         }
-        
+
+
+
     }
-    
+
+
 }
