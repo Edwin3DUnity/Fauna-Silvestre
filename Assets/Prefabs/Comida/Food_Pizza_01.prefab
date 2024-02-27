@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3844485128662155}
   - component: {fileID: 8338062156704035935}
   - component: {fileID: -3430917785210393637}
+  - component: {fileID: -4968531559359039982}
   m_Layer: 0
   m_Name: Food_Pizza_01
   m_TagString: Projectile
@@ -128,3 +129,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 7
+--- !u!114 &-4968531559359039982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3959278722202766486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15a611e580d791045ad5da4352692cfb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

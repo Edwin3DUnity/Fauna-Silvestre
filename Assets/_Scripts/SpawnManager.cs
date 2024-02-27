@@ -23,7 +23,7 @@ public class SpawnManager : MonoBehaviour
         posY = transform.position.y; 
         posZ = transform.position.z;
 
-        InvokeRepeating("GenerarAnimales()", startDelay, shootNextTime);
+        InvokeRepeating("GenerarAnimales", startDelay, shootNextTime);
 
     }
 
